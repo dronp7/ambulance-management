@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ambulance Management Dashboard</h1>
+        
+        <h2>New Trip Entry</h2>
+        <form id="tripForm">
+            <input type="text" id="from" placeholder="From" required>
+            <input type="text" id="to" placeholder="To" required>
+            <select id="ambulanceNumber" required>
+                <option value="">Select Ambulance</option>
+                <option value="1">Ambulance 1</option>
+                <option value="2">Ambulance 2</option>
+                <option value="3">Ambulance 3</option>
+                <option value="4">Ambulance 4</option>
+                <option value="5">Ambulance 5</option>
+                <option value="6">Ambulance 6</option>
+            </select>
+            <input type="text" id="driver" placeholder="Driver Name" required>
+            <input type="text" id="nursingStaff" placeholder="Nursing Staff" required>
+            <input type="number" id="amount" placeholder="Amount Charged (INR)" required>
+            <input type="number" id="expenses" placeholder="Expenses (INR)" required>
+            <input type="text" id="patientCondition" placeholder="Patient's Condition" required>
+            <input type="text" id="problem" placeholder="Problem Description" required>
+            <button type="submit">Submit Trip</button>
+        </form>
+
+        <h2>Trip History</h2>
+        <table id="tripHistory">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Ambulance</th>
+                    <th>Driver</th>
+                    <th>Nursing Staff</th>
+                    <th>Amount (INR)</th>
+                    <th>Expenses (INR)</th>
+                    <th>Net Income (INR)</th>
+                    <th>Patient Condition</th>
+                    <th>Problem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Trip history will be populated here -->
+            </tbody>
+        </table>
+
+        <h2>Financial Summary</h2>
+        <div id="financialSummary"></div>
+
+        <h2>Data Statistics</h2>
+        <canvas id="incomeChart"></canvas>
+
+        <h2>Reports</h2>
+        <button onclick="generateDailyReport()">Generate Daily Report</button>
+        <button onclick="generateWeeklyReport()">Generate Weekly Report</button>
+        <button onclick="generateMonthlyReport()">Generate Monthly Report</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
